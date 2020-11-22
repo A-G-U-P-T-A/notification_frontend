@@ -56,7 +56,7 @@ class App extends Component {
     }
     sendNotifications(data){
         Axios.post(
-            'http://localhost:8080/initiatenotifications',
+            'https://notification-main-cljfavmvd3dm.herokuapp.com/initiatenotifications',
             data,
             {headers: {"Content-Type": "application/json"}})
             .then( response => {
@@ -65,7 +65,7 @@ class App extends Component {
             });
     }
     getTemplates() {
-        Axios.get('http://localhost:8080/getalltemplates',
+        Axios.get('https://notification-main-cljfavmvd3dm.herokuapp.com/getalltemplates',
             {headers: {"Content-Type": "application/json"}})
             .then( response => {
                 this.setState({

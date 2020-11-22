@@ -14,7 +14,7 @@ class Logs extends Component {
     }
 
     componentDidMount() {
-        Axios.get('http://localhost:8080/getlogs',
+        Axios.get('https://notification-main-cljfavmvd3dm.herokuapp.com/getlogs',
             {headers: {"Content-Type": "application/json"}})
             .then( response => {
                 this.setState({
@@ -39,7 +39,6 @@ class Logs extends Component {
 
     render() {
         const { logs } = this.state;
-        //const logs = ['James', 'Paul', 'John', 'George', 'Ringo'];
         let logCards = this.createLogs(logs);
 
         return (
