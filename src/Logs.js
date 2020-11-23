@@ -20,6 +20,11 @@ class Logs extends Component {
                 this.setState({
                     logs: response.data
                 });
+                Axios.get('https://notification-main-cljfavmvd3dm.herokuapp.com/deletelogs',
+                    {headers: {"Content-Type": "application/json"}})
+                    .then( response => {
+                        console.log(response.status);
+                    });
             });
     }
 
